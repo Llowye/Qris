@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QRIS</title>
+<meta name="description" content="AVAIL ALL PAYMENT">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+  }
+
+  body{
+    background:#fff;
+    color:#1a1a1a;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:50px 20px 60px;
+  }
+
+  .wrapper{
+    width:100%;
+    max-width:400px;
+    text-align:center;
+  }
+
+  .banner{
+    width:100%;
+    aspect-ratio:16/10;
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:20px;
+    display:block;
+  }
+
+  .banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  h2{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:18px;
+  }
+
+  nav.menu{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:28px;
+    flex-wrap:wrap;
+  }
+
+  nav.menu a{
+    text-decoration:none;
+    color:#1a1a1a;
+    font-weight:600;
+    font-size:12px;
+    letter-spacing:1px;
+    padding:10px 16px;
+    border:1.5px solid #1a1a1a;
+    border-radius:8px;
+    transition:.15s;
+  }
+
+  nav.menu a:hover{
+    background:#1a1a1a;
+    color:#fff;
+  }
+
+  .qrFrame{
+    border:2px dashed #1a1a1a;
+    border-radius:14px;
+    padding:20px;
+    margin-bottom:10px;
+  }
+
+  .qrFrame img{
+    width:100%;
+    max-width:220px;
+    display:block;
+    margin:0 auto;
+  }
+
+  .scanLabel{
+    font-size:12px;
+    letter-spacing:3px;
+    color:#666;
+    margin-bottom:34px;
+  }
+
+  .otherLabel{
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:18px;
+  }
+
+  .payments{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:12px;
+    margin-bottom:34px;
+  }
+
+  .payments a img{
+    width:100%;
+    border-radius:10px;
+    display:block;
+    border:1.5px solid #eee;
+  }
+
+  footer{
+    font-size:13px;
+    color:#999;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <a href="https://llowye.github.io/Llowyerecord/" target="_blank" class="banner">
+    <img src="assets/banner.gif" alt="QRIS">
+  </a>
+
+  <h2>QRIS</h2>
+
+  <nav class="menu">
+    <a href="https://llowye.github.io/Llowyerecord/" target="_blank">QR CODE</a>
+    <a href="https://llowye.github.io/llowyeshop/" target="_blank">CART</a>
+    <a href="https://llowyeshop.carrd.co/" target="_blank">CANCEL</a>
+  </nav>
+
+  <a href="https://llowye.github.io/Llowyerecord/" target="_blank" class="qrFrame">
+    <img src="assets/qrcode.jpg" alt="Scan QR">
+  </a>
+  <div class="scanLabel">┌─ SCAN ME HERE ─┐</div>
+
+  <div class="otherLabel">↓ OTHER PAYMENTS ↓</div>
+
+  <div class="payments">
+    <a href="https://gopayllowye.netlify.app/" target="_blank">
+      <img src="assets/gopay1.jpg" alt="GoPay">
+    </a>
+    <a href="https://gopayllowye.netlify.app/" target="_blank">
+      <img src="assets/gopay2.jpg" alt="GoPay">
+    </a>
+    <a href="https://shopeepayllowye.netlify.app/" target="_blank">
+      <img src="assets/shopeepay.jpg" alt="ShopeePay">
+    </a>
+    <a href="https://danallowye.netlify.app/" target="_blank">
+      <img src="assets/dana.jpg" alt="DANA">
+    </a>
+  </div>
+
+  <footer>🌱 ArigathankS 🌱</footer>
+
+</div>
+
+</body>
+</html>
