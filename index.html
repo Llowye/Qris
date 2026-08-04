@@ -35,38 +35,17 @@
   }
 
   /* ---------- HEARTS ---------- */
-  .hearts{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin-bottom:14px;
-  }
+.hearts{
+  display:flex;
+  justify-content:center;
+  margin-bottom:14px;
+}
 
-  .heart{
-    width:26px;
-    height:26px;
-    position:relative;
-    transform:rotate(-45deg);
-    animation:bounce 1.6s ease-in-out infinite;
-  }
-
-  .heart::before,
-  .heart::after{
-    content:"";
-    position:absolute;
-    width:26px;
-    height:26px;
-    border-radius:50%;
-    background:inherit;
-  }
-  .heart::before{ top:-13px; left:0; }
-  .heart::after{ left:13px; top:0; }
-
-  @keyframes bounce{
-    0%,100%{ transform:rotate(-45deg) translateY(0); }
-    50%{ transform:rotate(-45deg) translateY(-6px); }
-  }
-
+.loveGif{
+  width:140px;
+  height:auto;
+  display:block;
+}
   /* ---------- HEADER DOME ---------- */
   .headerDome{
     background:#a8ddf0;
