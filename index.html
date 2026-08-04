@@ -7,84 +7,167 @@
 <meta name="description" content="AVAIL ALL PAYMENT">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
   *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Baloo 2',sans-serif;
   }
 
   body{
     background:#fff;
-    color:#1a1a1a;
     min-height:100vh;
     display:flex;
     justify-content:center;
-    padding:50px 20px 60px;
+    padding:40px 20px 100px;
+    position:relative;
   }
 
   .wrapper{
     width:100%;
-    max-width:400px;
+    max-width:380px;
+  }
+
+  /* ---------- HEARTS ---------- */
+  .hearts{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+
+  .heart{
+    width:26px;
+    height:26px;
+    position:relative;
+    transform:rotate(-45deg);
+    animation:bounce 1.6s ease-in-out infinite;
+  }
+
+  .heart::before,
+  .heart::after{
+    content:"";
+    position:absolute;
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:inherit;
+  }
+  .heart::before{ top:-13px; left:0; }
+  .heart::after{ left:13px; top:0; }
+
+  .heart.c1{ background:#ffb3c6; animation-delay:0s; }
+  .heart.c2{ background:#c9b6ff; animation-delay:.1s; }
+  .heart.c3{ background:#a8ddf0; animation-delay:.2s; }
+  .heart.c4{ background:#b6f0c2; animation-delay:.3s; }
+  .heart.c5{ background:#fff2a8; animation-delay:.4s; }
+
+  @keyframes bounce{
+    0%,100%{ transform:rotate(-45deg) translateY(0); }
+    50%{ transform:rotate(-45deg) translateY(-6px); }
+  }
+
+  /* ---------- HEADER DOME ---------- */
+  .headerDome{
+    background:#a8ddf0;
+    border:5px solid #ffd966;
+    border-bottom:none;
+    border-radius:60px 60px 0 0;
+    padding:16px 26px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .headerDome .title{
+    font-size:20px;
+    font-weight:800;
+    color:#fff;
+    letter-spacing:1px;
+  }
+
+  .headerIcons{
+    display:flex;
+    gap:12px;
+  }
+
+  .headerIcons a{
+    color:#ff4d4d;
+    display:flex;
+    align-items:center;
+  }
+
+  .headerIcons svg{
+    width:22px;
+    height:22px;
+    stroke:#ff4d4d;
+    fill:none;
+    stroke-width:2.4;
+  }
+
+  /* ---------- MAIN CARD ---------- */
+  .card{
+    background:#a8ddf0;
+    border:5px solid #ffd966;
+    border-top:none;
+    border-bottom:none;
+    padding:26px 22px 30px;
     text-align:center;
   }
 
-  .banner{
-    width:100%;
-    aspect-ratio:16/10;
-    border-radius:14px;
+  .avatar{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    border:5px solid #fff;
     overflow:hidden;
-    margin-bottom:20px;
-    display:block;
+    margin:-10px auto 18px;
+    background:#fff2c9;
   }
 
-  .banner img{
+  .avatar img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:block;
   }
 
-  h2{
-    font-size:22px;
-    font-weight:700;
-    letter-spacing:1px;
-    margin-bottom:18px;
-  }
-
-  nav.menu{
+  .scanLabel{
     display:flex;
+    align-items:center;
     justify-content:center;
-    gap:12px;
-    margin-bottom:28px;
-    flex-wrap:wrap;
-  }
-
-  nav.menu a{
-    text-decoration:none;
-    color:#1a1a1a;
-    font-weight:600;
-    font-size:12px;
-    letter-spacing:1px;
-    padding:10px 16px;
-    border:1.5px solid #1a1a1a;
-    border-radius:8px;
-    transition:.15s;
-  }
-
-  nav.menu a:hover{
-    background:#1a1a1a;
+    gap:10px;
     color:#fff;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:2px;
+    margin-bottom:16px;
+  }
+
+  .bracket{
+    width:22px;
+    height:16px;
+    border-top:3px solid #fff;
+  }
+
+  .bracket.left{
+    border-left:3px solid #fff;
+  }
+
+  .bracket.right{
+    border-right:3px solid #fff;
   }
 
   .qrFrame{
-    border:2px dashed #1a1a1a;
-    border-radius:14px;
-    padding:20px;
-    margin-bottom:10px;
+    border:3px dashed #fff;
+    border-radius:16px;
+    padding:16px;
+    margin-bottom:20px;
+    display:block;
+    background:rgba(255,255,255,0.08);
   }
 
   .qrFrame img{
@@ -92,39 +175,82 @@
     max-width:220px;
     display:block;
     margin:0 auto;
-  }
-
-  .scanLabel{
-    font-size:12px;
-    letter-spacing:3px;
-    color:#666;
-    margin-bottom:34px;
+    border-radius:4px;
   }
 
   .otherLabel{
-    font-size:14px;
+    color:#fff;
     font-weight:700;
+    font-size:15px;
     letter-spacing:1px;
-    margin-bottom:18px;
+    margin-bottom:14px;
   }
 
   .payments{
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:12px;
-    margin-bottom:34px;
+    grid-template-columns:repeat(4, 1fr);
+    gap:10px;
+  }
+
+  .payments a{
+    display:block;
+    background:#fff;
+    border-radius:14px;
+    padding:6px;
+    border:2px solid #fff;
   }
 
   .payments a img{
     width:100%;
-    border-radius:10px;
+    aspect-ratio:1/1;
+    object-fit:contain;
     display:block;
-    border:1.5px solid #eee;
+    border-radius:10px;
   }
 
-  footer{
-    font-size:13px;
-    color:#999;
+  /* ---------- FOOTER DOME ---------- */
+  .footerDome{
+    background:#a8ddf0;
+    border:5px solid #ffd966;
+    border-top:none;
+    border-radius:0 0 60px 60px;
+    padding:20px;
+    text-align:center;
+    color:#fff;
+    font-weight:700;
+    font-size:16px;
+    letter-spacing:1px;
+  }
+
+  .madeWith{
+    text-align:center;
+    color:#bbb;
+    font-size:12px;
+    margin-top:18px;
+  }
+
+  /* ---------- FLOATING BUTTON ---------- */
+  .floatBtn{
+    position:fixed;
+    bottom:24px;
+    left:24px;
+    width:52px;
+    height:52px;
+    background:#1a1a1a;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
+    text-decoration:none;
+  }
+
+  .floatBtn svg{
+    width:24px;
+    height:24px;
+    stroke:#fff;
+    fill:none;
+    stroke-width:2.4;
   }
 </style>
 </head>
@@ -133,43 +259,73 @@
 
 <div class="wrapper">
 
-  <a href="https://llowye.github.io/Llowyerecord/" target="_blank" class="banner">
-    <img src="assets/banner.gif" alt="QRIS">
-  </a>
-
-  <h2>QRIS</h2>
-
-  <nav class="menu">
-    <a href="https://llowye.github.io/Llowyerecord/" target="_blank">QR CODE</a>
-    <a href="https://llowye.github.io/llowyeshop/" target="_blank">CART</a>
-    <a href="https://llowyeshop.carrd.co/" target="_blank">CANCEL</a>
-  </nav>
-
-  <a href="https://llowye.github.io/Llowyerecord/" target="_blank" class="qrFrame">
-    <img src="qr.jpg" alt="Scan QR">
-  </a>
-  <div class="scanLabel">┌─ SCAN ME HERE ─┐</div>
-
-  <div class="otherLabel">↓ OTHER PAYMENTS ↓</div>
-
-  <div class="payments">
-    <a href="https://gopayllowye.netlify.app/" target="_blank">
-      <img src="seabank.jpg" alt="Seabank">
-    </a>
-    <a href="https://gopayllowye.netlify.app/" target="_blank">
-      <img src="gopay.jpg" alt="GoPay">
-    </a>
-    <a href="https://shopeepayllowye.netlify.app/" target="_blank">
-      <img src="shopeepay.jpg" alt="ShopeePay">
-    </a>
-    <a href="https://danallowye.netlify.app/" target="_blank">
-      <img src="dana.jpg" alt="DANA">
-    </a>
+  <div class="hearts">
+    <div class="heart c1"></div>
+    <div class="heart c2"></div>
+    <div class="heart c3"></div>
+    <div class="heart c4"></div>
+    <div class="heart c5"></div>
   </div>
 
-  <footer>🌱 ArigathankS 🌱</footer>
+  <div class="headerDome">
+    <div class="title">QRIS</div>
+    <div class="headerIcons">
+      <a href="https://llowye.github.io/Llowyerecord/" target="_blank" title="Scan">
+        <svg viewBox="0 0 24 24"><path d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/></svg>
+      </a>
+      <a href="https://llowye.github.io/llowyeshop/" target="_blank" title="Cart">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M3 3h2l2.6 12.4a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+      </a>
+      <a href="https://llowyeshop.carrd.co/" target="_blank" title="Cancel">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+
+    <div class="avatar">
+      <img src="assets/avatar.jpg" alt="Llowye">
+    </div>
+
+    <div class="scanLabel">
+      <span class="bracket left"></span>
+      SCAN ME HERE
+      <span class="bracket right"></span>
+    </div>
+
+    <a href="https://llowye.github.io/Llowyerecord/" target="_blank" class="qrFrame">
+      <img src="assets/qr.jpg" alt="Scan QR">
+    </a>
+
+    <div class="otherLabel">↓ OTHER PAYMENTS ↓</div>
+
+    <div class="payments">
+      <a href="https://gopayllowye.netlify.app/" target="_blank">
+        <img src="assets/seabank.jpg" alt="Seabank">
+      </a>
+      <a href="https://gopayllowye.netlify.app/" target="_blank">
+        <img src="assets/gopay.jpg" alt="GoPay">
+      </a>
+      <a href="https://shopeepayllowye.netlify.app/" target="_blank">
+        <img src="assets/shopeepay.jpg" alt="ShopeePay">
+      </a>
+      <a href="https://danallowye.netlify.app/" target="_blank">
+        <img src="assets/dana.jpg" alt="DANA">
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footerDome">🌱 ArigathankS 🌱</div>
+
+  <div class="madeWith">( Made with ❤ )</div>
 
 </div>
+
+<a href="https://llowyeshop.carrd.co/" class="floatBtn" title="Back">
+  <svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+</a>
 
 </body>
 </html>
