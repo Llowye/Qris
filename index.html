@@ -318,23 +318,18 @@
   <script>
 function playClickSound() {
   const ctx = new (window.AudioContext || window.webkitAudioContext)();
-  const bufferSize = ctx.sampleRate * 0.05;
-  const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-  const data = buffer.getChannelData(0);
-  for (let i = 0; i < bufferSize; i++) {
-    data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 8);
-  }
-  const noise = ctx.createBufferSource();
-  noise.buffer = buffer;
-  const gain = ctx.createGain();
-  gain.gain.value = 1.5;
-  noise.connect(gain).connect(ctx.destination);
-  noise.start();
+  [800, 1200].forEach((freq, i) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(freq, ctx.currentTime + i * 0.04);
+    gain.gain.setValueAtTime(0.4, ctx.currentTime + i * 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.04 + 0.03);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(ctx.currentTime + i * 0.04);
+    osc.stop(ctx.currentTime + i * 0.04 + 0.03);
+  });
 }
-
-document.querySelectorAll('.payments a').forEach(function(a){
-  a.addEventListener('click', playClickSound);
-});
 </script>
   
 </body>
