@@ -64,17 +64,19 @@
   display:block;
 }
   /* ---------- HEADER DOME ---------- */
-  .headerDome{
+    .headerDome{
     background:#c8ebf5;
     border:5px solid #FFF2B0;
     border-radius:40px 40px 0 0;
     padding:-3px 26px;
     display:flex;
-    justify-content:space-between;
+    justify-content:center; /* Mengubah dari space-between ke center */
+    gap:16px;              /* Memberi jarak antar tulisan QRIS dan ikon */
     align-items:center;
     margin-bottom:10px;
     margin-top:-10px;
-  }
+    }
+  
 
   .headerDome .title{
     font-size:26px;
@@ -134,7 +136,7 @@
     align-items:center;
     justify-content:center;
     gap:10px;
-    color:#fff;
+    color:#FFF2B0;
     font-weight:900;
     font-size:23px;
     letter-spacing:2px;
@@ -174,7 +176,7 @@
   }
 
   .otherLabel{
-    color:#fff;
+    color:#FFF2B0;
     font-weight:990;
     font-size:19px;
     letter-spacing:1px;
