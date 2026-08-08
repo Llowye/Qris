@@ -191,44 +191,27 @@
     margin-top:-30px;
   }
 
-  .musicBtn{
-  width:80px;
-  height:80px;
-  background:#FFF2B0;
-  border:3px solid #7ec8e3;
-  border-radius:50%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  font-size:22px;
-  font-weight:700;
-  color:#333;
-}
-
-.musicLabel{
-  font-size:12px;
-  margin-top:2px;
-}
+  @keyframes float{
+    0%,100%{transform:translateY(0) rotate(0deg);}
+    50%{transform:translateY(-8px) rotate(12deg);}
+  }
   @keyframes pulseMusic{
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.15); }
 }
-#musicBtn{
+  #musicBtn{
   transition: transform .08s ease, box-shadow .08s ease;
 }
 #musicBtn:active{
   transform: scale(0.92) translateY(2px);
   box-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
-@keyframes ringPhone{
+  @keyframes ringPhone{
   0%, 100% { transform: rotate(0deg); }
   20% { transform: rotate(-15deg); }
   40% { transform: rotate(15deg); }
   60% { transform: rotate(-10deg); }
   80% { transform: rotate(10deg); }
-}
 
   .payments{
     display:grid;
