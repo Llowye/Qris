@@ -296,13 +296,12 @@
 <body>
 
 <div class="wrapper">
-  
 
   <audio id="bgMusic" src="lv_0_20260807185715.mp3"></audio>
 
 <button id="musicBtn" onclick="toggleMusic()" style="position:fixed; top:14px; right:14px; background:#FFF0A1; border: 3px solid #B2EBF7; border-radius:999px; padding:10px 10px; font-size:9px; font-weight:400; color:#0B0B0B; box-shadow:0 4px 10px rgba(0,0,0,0.15); z-index:999; animation: pulseMusic 1.5s ease-in-out infinite; display:flex; flex-direction:column; align-items:center; gap:1px;">
   <span id="musicIcon" style="font-size:18px; display:inline-block; margin-bottom:2px; animation: ringPhone 0.8s ease-in-out infinite;">🎵</span>
-  music
+  <span id="musicLabel">music</span>
 </button>
 
 <div class="hearts">
@@ -392,22 +391,27 @@ document.querySelectorAll('.payments a').forEach(function(a){
   a.addEventListener('click', playClickSound);
 });
 
-  <script>
+<script>
 let isPlaying = false;
 function toggleMusic(){
   const btn = document.getElementById('musicBtn');
   const icon = document.getElementById('musicIcon');
+  const label = document.getElementById('musicLabel');
   const audio = document.getElementById('bgMusic');
   if(!isPlaying){
     audio.play();
     isPlaying = true;
     btn.style.animation = 'none';
     icon.style.animation = 'none';
+    icon.textContent = '🟠';
+    label.textContent = 'stop';
   } else {
     audio.pause();
     isPlaying = false;
     btn.style.animation = 'pulseMusic 1.5s ease-in-out infinite';
     icon.style.animation = 'ringPhone 0.8s ease-in-out infinite';
+    icon.textContent = '🎵';
+    label.textContent = 'music';
   }
 }
 
