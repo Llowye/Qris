@@ -14,7 +14,6 @@
   Full license: lihat file LICENSE.txt
   ====================================================================================================================================
 -->
-lv_0_20260807185715.mp3
 
 <!DOCTYPE html>
 <html lang="id">
@@ -193,6 +192,27 @@ lv_0_20260807185715.mp3
     margin-top:-30px;
   }
 
+  .musicBtn{
+  width:80px;
+  height:80px;
+  background:#FFF2B0;
+  border:3px solid #7ec8e3;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  font-size:22px;
+  font-weight:700;
+  color:#333;
+}
+
+.musicLabel{
+  font-size:12px;
+  margin-top:2px;
+}
+
   .payments{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
@@ -258,6 +278,15 @@ lv_0_20260807185715.mp3
 <body>
 
 <div class="wrapper">
+  
+  <div class="musicBtn" onclick="toggleMusic()">
+  <span id="musicIcon">🎵</span>
+  <span class="musicLabel">music</span>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="lv_0_20260807185715.mp3" type="audio/mpeg">
+</audio>
 
 <div class="hearts">
   <img src="love.gif" alt="love" class="loveGif">
@@ -345,6 +374,20 @@ function playClickSound() {
 document.querySelectorAll('.payments a').forEach(function(a){
   a.addEventListener('click', playClickSound);
 });
+
+  <script>
+function toggleMusic(){
+  const audio = document.getElementById('bgMusic');
+  const icon = document.getElementById('musicIcon');
+  if(audio.paused){
+    audio.play();
+    icon.textContent = '⏸️';
+  } else {
+    audio.pause();
+    icon.textContent = '🎵';
+  }
+}
+</script>
 </script>
 
 </body>
