@@ -212,6 +212,7 @@
   40% { transform: rotate(15deg); }
   60% { transform: rotate(-10deg); }
   80% { transform: rotate(10deg); }
+}
 
   .payments{
     display:grid;
@@ -372,6 +373,9 @@ function playClickSound() {
 document.querySelectorAll('.payments a').forEach(function(a){
   a.addEventListener('click', playClickSound);
 });
+</script>
+
+
 
 <script>
 let isPlaying = false;
@@ -396,7 +400,6 @@ function toggleMusic(){
     label.textContent = 'music';
   }
 }
-
 </script>
 
 </body>
